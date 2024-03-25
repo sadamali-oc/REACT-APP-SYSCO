@@ -5,11 +5,6 @@ function App() {
   //array
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
-  let selectedIndex = 0;
-
-  //type annotation
-  //event handler
-  const handleClick = (event: MouseEvent) => console.log(event);
   // items = [];
 
   //   const getMessage =()=>{
@@ -31,15 +26,7 @@ function App() {
       {items.length === 0 && <p>Not found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
-          <li
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            key={item}
-            onClick={handleClick}
-          >
+          <li className="list-group-item" key={item} onClick={handleClick}>
             {item}
           </li>
         ))}
