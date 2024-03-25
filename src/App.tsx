@@ -22,7 +22,9 @@ function App() {
       {/* <Alert>
         Hello<span>World</span> 
       </Alert> */}
-      {alertVisible && <Alert>My alert</Alert>}
+      {alertVisible && (
+        <Alert onClose={() => seltAlertVisibility(false)}> My alert</Alert>
+      )}
       <Button color="primary" onClick={() => seltAlertVisibility(true)}>
         My Button
       </Button>
