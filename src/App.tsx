@@ -1,9 +1,15 @@
 import ListGroup from "./components/ListGroup";
+import { MouseEvent } from "react";
 
 function App() {
   //array
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
+  let selectedIndex = 0;
+
+  //type annotation
+  //event handler
+  const handleClick = (event: MouseEvent) => console.log(event);
   // items = [];
 
   //   const getMessage =()=>{
@@ -26,9 +32,13 @@ function App() {
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={(event) => console.log(event)}
+            onClick={handleClick}
           >
             {item}
           </li>
